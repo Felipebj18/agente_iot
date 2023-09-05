@@ -5,10 +5,12 @@ def getData(url):
     response = requests.get(url)
 
     if response.status_code == 200:#si la petición es exitosa
-        # data = response.json()
-        # return data
-        print("código 200")
-        return
+        # # data = response.json()
+        # # return data
+        # print("código 200")
+        # return
+        data = response.json()
+        extrerDatosFronisDevices(data)
     else:
         print("Error en la solicitud. Código de error:", response.status_code)
         
@@ -34,6 +36,7 @@ def extrerDatosFronisDevices(json_froniusDevice):#json_froniusDevice es el json 
     "DeviceId" : device_info["DeviceId"],
     "Timestamp": time_stamp   
     }
-    
-    return data_final
+    print("FRONIUS DEVICE:")
+    print(data_final)
+    return 
 

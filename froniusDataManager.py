@@ -5,10 +5,8 @@ def getData(url):
     response = requests.get(url)
 
     if response.status_code == 200:#si la petición es exitosa
-        # data = response.json()
-        # return data
-        print("código 200")
-        return
+        data = response.json()
+        extraerDatosFroniusDataManager(data)
     else:
         print("Error en la solicitud. Código de error:", response.status_code)
         
@@ -37,7 +35,9 @@ def extraerDatosFroniusDataManager(json_froniusDM):#json_froniusDM es el json ob
         'Radiacion' :data['Body']['Data']['1']['2'],
         'Timestamp' : fecha
     }
-    return data_final
+    print("FRONIUS DATA MANAGER")
+    print(data_final)
+    return 
 
 
 
