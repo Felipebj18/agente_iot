@@ -1,18 +1,18 @@
 import time
 
-def getData(url):
+def getData(urls):
+    print(urls)
     import requests
-    response = requests.get(url)
+    for nombre_url,url in urls.items():
+        response = requests.get(url)
 
-    if response.status_code == 200:#si la petición es exitosa
-        # # data = response.json()
-        # # return data
-        # print("código 200")
-        # return
-        data = response.json()
-        extrerDatosFronisDevices(data)
-    else:
-        print("Error en la solicitud. Código de error:", response.status_code)
+        if response.status_code == 200:#si la petición es exitosa
+            data = response.json()
+            extrerDatosFronisDevices(data)
+            print("Los datos de la URL ", nombre_url, "son:")
+            print()
+        else:
+            print("Error en la solicitud. Código de error:", response.status_code)
         
 #print(metodoGet("http://10.60.32.30/solar_api/v1/GetSensorRealtimeData.cgi?DataCollection=NowSensorData&Scope=System"))
 
@@ -38,5 +38,5 @@ def extrerDatosFronisDevices(json_froniusDevice):#json_froniusDevice es el json 
     }
     print("FRONIUS DEVICE:")
     print(data_final)
-    return 
+    return data_final
 

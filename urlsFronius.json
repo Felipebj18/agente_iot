@@ -1,0 +1,8 @@
+{
+    "url1" : "http://10.60.63.10/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData",
+    "url2" : "http://10.60.63.10/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=2&DataCollection=CommonInverterData",
+    "url3" : "http://10.60.63.10/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=3&DataCollection=CommonInverterData",
+    "url4" : "http://10.60.63.10/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=4&DataCollection=CommonInverterData",
+    "url5" : "http://10.60.32.30/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData",
+    "url6" : "http://10.60.32.30/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=2&DataCollection=CommonInverterData"
+}

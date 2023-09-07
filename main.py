@@ -3,6 +3,15 @@ import threading
 import fronius
 import froniusDataManager
 
+import json
+
+# Abre el archivo JSON
+def openJson(fileName):
+    with open(fileName, 'r') as archivo_json:
+        datos = json.load(archivo_json)
+
+    return datos
+
 # Tiempo entre consultas (30 segundos en este caso)
 intervalo_consulta = 30
 
@@ -11,18 +20,25 @@ def setupThread(getDataFunction, url):
         getDataFunction(url)
         time.sleep(intervalo_consulta)
 
+        
 if __name__ == "__main__":
     '''
     En los args hay que pasar la URLS
     '''
+    # SE ADQUIEREN LAS URL EN JSON
+    urls_fronius = openJson('./urlsFronius.json')
+    # print(urls_fronius)
+    urls_fronius_data_manager = openJson('./urlsFroniusDataManager.json')
+    # print(urls_fronius_data_manager)
     thread_fronius = threading.Thread(
         target=setupThread,
-        args=(fronius.getData, "http://10.60.63.10/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DeviceId=1&DataCollection=CommonInverterData")
+        args=(fronius.getData, urls_fronius)
     )
+    # executeThread()
     
     thread_froniusDataManager = threading.Thread(
         target=setupThread,
-        args=(froniusDataManager.getData, "http://10.60.32.30/solar_api/v1/GetSensorRealtimeData.cgi?DataCollection=NowSensorData&Scope=System")
+        args=(froniusDataManager.getData, urls_fronius_data_manager)
     )
 
     thread_fronius.start()
