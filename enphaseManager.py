@@ -15,7 +15,8 @@ def scroll_to_element(driver, element):
         actions.move_to_element(element)
         actions.perform()
     except Exception as e:
-        print("Error al desplazar hasta el elemento:", e)
+        # print("Error al desplazar hasta el elemento:", e)
+        print(" ")
 
 # Opciones para ejecutar Firefox en modo headless
 firefox_options = webdriver.FirefoxOptions()
