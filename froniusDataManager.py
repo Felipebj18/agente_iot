@@ -42,18 +42,3 @@ def extraerDatosFroniusDataManager(json_froniusDM):#json_froniusDM es el json ob
     print("FRONIUS DATA MANAGER")
     print(data_final)
     return 
-
-
-
-def imprimirFroniusDataManager(data):
-    for key, value in data.items():
-        if key == 'Timestamp':
-            print(f"{key}: {value}")
-        else:
-            print(f"{key}: {value['Value']} {value['Unit']}")
-
-    
-
-    
-    
-# imprimirFroniusDataManager(extraerDatosFroniusDataManager(metodoGet("http://10.60.32.30/solar_api/v1/GetSensorRealtimeData.cgi?DataCollection=NowSensorData&Scope=System")))
