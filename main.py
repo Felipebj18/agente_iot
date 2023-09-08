@@ -2,6 +2,7 @@ import time
 import threading
 import fronius
 import froniusDataManager
+import enphaseManager
 
 import json
 
@@ -19,6 +20,11 @@ def setupThread(getDataFunction, url):
     while True:
         getDataFunction(url)
         time.sleep(intervalo_consulta)
+
+def setupThreadEnphase(getDataFunction):
+    while True:
+        getDataFunction()
+        time.sleep(intervalo_consulta) #Se debe actualizar a 5 min
 
         
 if __name__ == "__main__":
@@ -41,11 +47,19 @@ if __name__ == "__main__":
         args=(froniusDataManager.getData, urls_fronius_data_manager)
     )
 
+    thread_enphaseManager = threading.Thread(
+        target=setupThreadEnphase,
+        args=(enphaseManager.getData,)
+    )
+
+
     thread_fronius.start()
     thread_froniusDataManager.start()
+    thread_enphaseManager.start()
 
     # Mantén el programa principal en ejecución
     thread_fronius.join()
     thread_froniusDataManager.join()
+    thread_enphaseManager.join()
 
 
