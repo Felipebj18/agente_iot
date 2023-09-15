@@ -41,4 +41,4 @@ def extraerDatosFroniusDataManager(json_froniusDM):#json_froniusDM es el json ob
     }
     print("FRONIUS DATA MANAGER")
     print(data_final)
-    return 
+    return data_final
