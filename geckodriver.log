@@ -37,3 +37,17 @@ JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeE
 Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
 Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
 console.error: "Error during quit-application-granted: [Exception... \"File error: Not found\"  nsresult: \"0x80520012 (NS_ERROR_FILE_NOT_FOUND)\"  location: \"JS frame :: resource:///modules/BrowserGlue.jsm :: _onQuitApplicationGranted/tasks< :: line 1996\"  data: no]"
+1694187561309	geckodriver	INFO	Listening on 127.0.0.1:61251
+1694187564339	mozrunner::runner	INFO	Running command: "C:\\Users\\FELIPE.LAPTOP-20LUI4GA\\.cache\\selenium\\firefox\\win64\\117.0\\firefox.exe" "--marionette" "-h ... emote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FELIPE~1.LAP\\AppData\\Local\\Temp\\rust_mozprofiletSlrXc"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694187565059	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1694187565159	Marionette	INFO	Listening on port 61263
+WebDriver BiDi listening on ws://127.0.0.1:61252
+Read port: 61263
+1694187565476	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:61252/devtools/browser/19f74676-9215-42fa-b5b1-9aebe5aaccda
