@@ -51,3 +51,17 @@ Read port: 61263
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
 console.error: ({})
 DevTools listening on ws://127.0.0.1:61252/devtools/browser/19f74676-9215-42fa-b5b1-9aebe5aaccda
+1694792473553	geckodriver	INFO	Listening on 127.0.0.1:55260
+1694792476586	mozrunner::runner	INFO	Running command: "C:\\Users\\FELIPE.LAPTOP-20LUI4GA\\.cache\\selenium\\firefox\\win64\\117.0.1\\firefox.exe" "--marionette" " ... emote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FELIPE~1.LAP\\AppData\\Local\\Temp\\rust_mozprofile1Dt2V9"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694792477914	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1694792478027	Marionette	INFO	Listening on port 55283
+WebDriver BiDi listening on ws://127.0.0.1:55263
+Read port: 55283
+1694792478392	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:55263/devtools/browser/5b1b8f8d-c4d3-44bf-bae0-4051712f3edb

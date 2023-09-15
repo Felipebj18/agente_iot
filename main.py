@@ -6,6 +6,30 @@ import enphaseManager
 
 import json
 
+import requests
+import json
+
+def enviar_datos_post(url, datos):
+    try:
+       
+        cabeceras = {
+            "Content-Type": "application/json"
+        }
+
+        
+        respuesta = requests.post(url, data=json.dumps(datos), headers=cabeceras)
+
+        
+        if respuesta.status_code == 200:
+            return "Solicitud POST exitosa."
+        else:
+            return f"Error en la solicitud POST. Código de estado: {respuesta.status_code}"
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+
+
+
 # Abre el archivo JSON
 def openJson(fileName):
     with open(fileName, 'r') as archivo_json:
