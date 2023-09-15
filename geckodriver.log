@@ -51,3 +51,145 @@ Read port: 61263
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
 console.error: ({})
 DevTools listening on ws://127.0.0.1:61252/devtools/browser/19f74676-9215-42fa-b5b1-9aebe5aaccda
+1694793038845	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVxQyjM"
+*** You are running in headless mode.
+1694793042523	Marionette	INFO	Marionette enabled
+1694793042534	Marionette	INFO	Listening on port 42065
+JavaScript error: resource://gre/modules/addons/XPIInstall.jsm, line 691: Error: File resource://builtin-themes/resource://builtin-themes/dark/ does not contain a valid manifest
+1694793046229	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVxQyjM/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1694793086802	Marionette	INFO	Stopped listening on port 42065
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.error: "Error during quit-application-granted: [Exception... \"File error: Not found\"  nsresult: \"0x80520012 (NS_ERROR_FILE_NOT_FOUND)\"  location: \"JS frame :: resource:///modules/BrowserGlue.jsm :: _onQuitApplicationGranted/tasks< :: line 1996\"  data: no]"
+1694793119487	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiledm67Hm"
+*** You are running in headless mode.
+1694793120497	Marionette	INFO	Marionette enabled
+1694793120505	Marionette	INFO	Listening on port 34745
+JavaScript error: resource://gre/modules/addons/XPIInstall.jsm, line 691: Error: File resource://builtin-themes/resource://builtin-themes/dark/ does not contain a valid manifest
+1694793121074	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiledm67Hm/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1694793152045	Marionette	INFO	Stopped listening on port 34745
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.error: "Error during quit-application-granted: [Exception... \"File error: Not found\"  nsresult: \"0x80520012 (NS_ERROR_FILE_NOT_FOUND)\"  location: \"JS frame :: resource:///modules/BrowserGlue.jsm :: _onQuitApplicationGranted/tasks< :: line 1996\"  data: no]"
+1694793184455	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileJoIFuy"
+*** You are running in headless mode.
+1694793184993	Marionette	INFO	Marionette enabled
+1694793184998	Marionette	INFO	Listening on port 42381
+JavaScript error: resource://gre/modules/addons/XPIInstall.jsm, line 691: Error: File resource://builtin-themes/resource://builtin-themes/dark/ does not contain a valid manifest
+1694793186185	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileJoIFuy/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1694793218756	Marionette	INFO	Stopped listening on port 42381
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.error: "Error during quit-application-granted: [Exception... \"File error: Not found\"  nsresult: \"0x80520012 (NS_ERROR_FILE_NOT_FOUND)\"  location: \"JS frame :: resource:///modules/BrowserGlue.jsm :: _onQuitApplicationGranted/tasks< :: line 1996\"  data: no]"
+1694793251136	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile050HfR"
+*** You are running in headless mode.
+1694793251607	Marionette	INFO	Marionette enabled
+1694793251611	Marionette	INFO	Listening on port 42701
+JavaScript error: resource://gre/modules/addons/XPIInstall.jsm, line 691: Error: File resource://builtin-themes/resource://builtin-themes/dark/ does not contain a valid manifest
+1694793252153	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile050HfR/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1694793283443	Marionette	INFO	Stopped listening on port 42701
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.error: "Error during quit-application-granted: [Exception... \"File error: Not found\"  nsresult: \"0x80520012 (NS_ERROR_FILE_NOT_FOUND)\"  location: \"JS frame :: resource:///modules/BrowserGlue.jsm :: _onQuitApplicationGranted/tasks< :: line 1996\"  data: no]"
+1694793314344	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileU7gh14"
+*** You are running in headless mode.
+1694793315800	Marionette	INFO	Marionette enabled
+1694793315830	Marionette	INFO	Listening on port 41861
+JavaScript error: resource://gre/modules/addons/XPIInstall.jsm, line 691: Error: File resource://builtin-themes/resource://builtin-themes/dark/ does not contain a valid manifest
+1694793318337	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileU7gh14/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1694793350931	Marionette	INFO	Stopped listening on port 41861
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.error: "Error during quit-application-granted: [Exception... \"File error: Not found\"  nsresult: \"0x80520012 (NS_ERROR_FILE_NOT_FOUND)\"  location: \"JS frame :: resource:///modules/BrowserGlue.jsm :: _onQuitApplicationGranted/tasks< :: line 1996\"  data: no]"
+1694793383410	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileMPMaOU"
+*** You are running in headless mode.
+1694793383951	Marionette	INFO	Marionette enabled
+1694793383955	Marionette	INFO	Listening on port 35363
+JavaScript error: resource://gre/modules/addons/XPIInstall.jsm, line 691: Error: File resource://builtin-themes/resource://builtin-themes/dark/ does not contain a valid manifest
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileMPMaOU/search.json.mozlz4", (void 0)))
+1694793386110	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://enlighten.enphaseenergy.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1694793442432	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGswi4P"
+*** You are running in headless mode.
+1694793442792	Marionette	INFO	Marionette enabled
+1694793442796	Marionette	INFO	Listening on port 41811
+JavaScript error: resource://gre/modules/addons/XPIInstall.jsm, line 691: Error: File resource://builtin-themes/resource://builtin-themes/dark/ does not contain a valid manifest
+1694793443343	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileGswi4P/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
