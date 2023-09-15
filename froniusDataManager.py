@@ -1,5 +1,24 @@
 import time
+import requests
+import json
 
+def metodo_post(server_ip,datos,device_id):
+    try:
+        
+        cabeceras = {
+            "Content-Type": "application/json"
+        }
+        url = server_ip + ":1026/v2/entities/" + str(device_id)
+        
+        respuesta = requests.post(url, data=json.dumps(datos), headers=cabeceras)
+
+        if respuesta.status_code == 200:
+            return "Solicitud POST exitosa."
+        else:
+            return f"Error en la solicitud POST. Código de estado: {respuesta.status_code}"
+    except Exception as e:
+        return f"Error: {str(e)}"
+    
 def getData(urls):
     print(urls)
     import requests
@@ -42,3 +61,24 @@ def extraerDatosFroniusDataManager(json_froniusDM):#json_froniusDM es el json ob
     print("FRONIUS DATA MANAGER")
     print(data_final)
     return 
+
+
+'''
+url: {server_ip}:1026/v2/entities/{devide_id}
+
+
+{
+    "Temperatura_1":{
+        "type": "Number",
+        "value": 25
+    }
+    "Temperatura_2":{
+        "type": "Number",
+        "value": 56
+    },
+    "Radiation": {
+        "type": "Number",
+        "value": 78
+    }
+}
+'''
