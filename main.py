@@ -78,12 +78,12 @@ if __name__ == "__main__":
 
 
     thread_fronius.start()
-    thread_froniusDataManager.start()
-    thread_enphaseManager.start()
+    # thread_froniusDataManager.start()
+    # thread_enphaseManager.start()
 
     # Mantén el programa principal en ejecución
     thread_fronius.join()
-    thread_froniusDataManager.join()
-    thread_enphaseManager.join()
+    # thread_froniusDataManager.join()
+    # thread_enphaseManager.join()
 
 
