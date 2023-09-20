@@ -36,30 +36,12 @@ def extrerDatosFronisDevices(json_froniusDevice):
             "DeviceId": device_info["DeviceId"],
             "Timestamp": time_stamp
         }
-        print("FRONIUS DEVICE:")
-        print(data_final)
         crearPostJSON(data_final)
         # return data_final
         return
     except Exception as e:
         print(f"Se produjo una excepción en la variable '{e.args[0]}' y el DeviceId es '{device_info['DeviceId']}'")
 
-
-# def crearPostJSON(data_final):
-#     post_json = {}
-
-#     for key, value in data_final.items():
-#         post_value = {"type": "Number"}
-
-#         if isinstance(value, dict):
-#             post_value["value"] = value.get("Value", None)
-#         else:
-#             post_value["value"] = value
-
-#         post_json[key] = post_value
-
-#     print(post_json)
-#     return post_json
 
 def crearPostJSON(data_final):
     post_json = {}
