@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import datetime
+import json
 
 microInvertersData = {}
 
@@ -54,13 +55,13 @@ def getData():
     time.sleep(2)
     totalEnergyElement = driver.find_element_by_xpath('//*[@id="energy_lifetime"]/div[2]/div/div/span[1]')
     units = totalEnergyElement.get_attribute('data-units')
-    energyValue = totalEnergyElement.get_attribute('data-value')
+    EnergyTotal = totalEnergyElement.get_attribute('data-value')
 
 
 
     # Buscar el elemento de energía de hoy
     energyTodayElement = driver.find_element_by_xpath('//*[@id="energy_today"]/div[2]/div[1]/div/span[1]')
-    energyTodayValue = energyTodayElement.get_attribute('data-value') #Energyy day
+    EnergyDay = energyTodayElement.get_attribute('data-value') #Energyy day
     energyTodayUnit = energyTodayElement.get_attribute('data-units')
 
 
@@ -79,7 +80,7 @@ def getData():
     time.sleep(2)
 
     # Inicializar una variable para el total de potencia
-    totalPower = 0 #PAC
+    PAC = 0 #PAC
 
     # Iterar a través de las filas de la tabla (20 filas en total)
     for i in range(1, 21):
@@ -99,7 +100,7 @@ def getData():
             microInvertersData[numSerie] = potenciaGenerada
 
             # Agregar la potencia generada a la variable totalPower
-            totalPower += potenciaGenerada
+            PAC += potenciaGenerada
 
 
     formato = '%d-%m-%Y %H:%M:%S'
@@ -110,13 +111,51 @@ def getData():
     for numSerie, potenciaGenerada in microInvertersData.items():
         print(f"NumSerie: {numSerie}, PotenciaGenerada: {potenciaGenerada}")
 
-    # Imprimir datos obtenidos
-    print("total energy value:")
-    print(energyValue, " ", units)
-    print("Energy today:")
-    print(energyTodayValue, " ", energyTodayUnit)
-    print("Total Power:", totalPower)
-    print("Hora actual: ", fecha_actual)
+    # # Imprimir datos obtenidos
+    # print("total energy value:")
+    # print(EnergyTotal, " ", units)
+    # print("Energy today:")
+    # print(EnergyDay, " ", energyTodayUnit)
+    # print("Total Power / PAC:", PAC)
+    # print("Hora actual: ", fecha_actual)
+    createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData)
 
     driver.quit()
+
+
+def createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData):
+    # Crear un diccionario para el JSON
+    json_data = {
+        "EnergyDay": {
+            "type": "Number",
+            "value": EnergyDay,
+            "metadata": {}
+        },
+        "EnergyTotal": {
+            "type": "Number",
+            "value": EnergyTotal,
+            "metadata": {}
+        },
+        "PAC": {
+            "type": "Number",
+            "value": PAC,
+            "metadata": {}
+        }
+    }
+
+    # Agregar las potencias individuales al JSON
+    for key, value in microInvertersData.items():
+        json_data[key] = {
+            "type": "Number",
+            "value": value,
+            "metadata": {
+                "numSerie": key
+            }
+        }
+
+    # Convertir el diccionario en formato JSON
+    json_str = json.dumps(json_data, indent=4)
+
+    # Imprimir el JSON
+    print(json_str)
 
