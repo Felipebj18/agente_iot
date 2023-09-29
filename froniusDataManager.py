@@ -18,6 +18,24 @@ def metodo_post(server_ip,datos,device_id):
             return f"Error en la solicitud POST. Código de estado: {respuesta.status_code}"
     except Exception as e:
         return f"Error: {str(e)}"
+
+
+def metodo_patch(server_ip, datos, device_id):
+    try:
+        cabeceras = {
+            "Content-Type": "application/json"
+        }
+        url = f"{server_ip}:1026/v2/entities/{device_id}/attrs"
+        
+        respuesta = requests.patch(url, data=json.dumps(datos), headers=cabeceras)
+
+        if respuesta.status_code == 200:
+            return "Solicitud PATCH exitosa."
+        else:
+            return f"Error en la solicitud PATCH. Código de estado: {respuesta.status_code}"
+    except Exception as e:
+        return f"Error: {str(e)}"
+
     
 def getData(urls):
     print(urls)
