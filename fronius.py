@@ -77,9 +77,9 @@ def transform_url(url, deviceId):
     
     # Crear el nuevo DeviceId según las reglas dadas
     if url.startswith("http://10.60.63.10"):
-        new_device_id = f"FronuisB18_{deviceId}"
+        new_device_id = f"FroniusB18_{deviceId}"
     elif url.startswith("http://10.60.32.30"):
-        new_device_id = f"FronuisB11_{deviceId}"
+        new_device_id = f"FroniusB11_{deviceId}"
     else:
         raise ValueError("URL no válida")
     
