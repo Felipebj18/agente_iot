@@ -31,8 +31,15 @@ if __name__ == "__main__":
     '''
     En los args hay que pasar la URLS
     '''
-    data ="{\"Radiacion\": {\"type\": \"Number\",\"value\": \"45.3\",\"metadata\": \"metadata\"}"
-    froniusDataManager.metodo_patch(server_ip="54.145.74.186",datos=data,device_id="FroniusDM_1")
+    mensaje_json = {
+        "Radiacion": {
+            "type": "Number",
+            "value": 324,
+            "metadata": {}
+        }
+    }
+    resultado =froniusDataManager.metodo_patch(server_ip="54.145.74.186",datos=mensaje_json,device_id="FroniusDM_1")
+    print(resultado)
     # SE ADQUIEREN LAS URL EN JSON
     #urls_fronius = openJson('./urlsFronius.json')
     # print(urls_fronius)

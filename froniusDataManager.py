@@ -25,11 +25,12 @@ def metodo_patch(server_ip, datos, device_id):
         cabeceras = {
             "Content-Type": "application/json"
         }
-        url = f"{server_ip}:1026/v2/entities/{device_id}/attrs"
+        url = f"http://{server_ip}:1026/v2/entities/{device_id}/attrs"
         
         respuesta = requests.patch(url, data=json.dumps(datos), headers=cabeceras)
+        
 
-        if respuesta.status_code == 200:
+        if respuesta.status_code == 204:
             return "Solicitud PATCH exitosa."
         else:
             return f"Error en la solicitud PATCH. Código de estado: {respuesta.status_code}"
