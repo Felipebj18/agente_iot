@@ -31,44 +31,36 @@ if __name__ == "__main__":
     '''
     En los args hay que pasar la URLS
     '''
-    mensaje_json = {
-        "Radiacion": {
-            "type": "Number",
-            "value": 324,
-            "metadata": {}
-        }
-    }
-    resultado =froniusDataManager.metodo_patch(server_ip="54.145.74.186",datos=mensaje_json,device_id="FroniusDM_1")
-    print(resultado)
+    
     # SE ADQUIEREN LAS URL EN JSON
-    #urls_fronius = openJson('./urlsFronius.json')
-    # print(urls_fronius)
-    #urls_fronius_data_manager = openJson('./urlsFroniusDataManager.json')
-    # print(urls_fronius_data_manager)
-    # thread_fronius = threading.Thread(
-    #     target=setupThread,
-    #     args=(fronius.getData, urls_fronius)
-    # )
+    urls_fronius = openJson('./urlsFronius.json')
+    print(urls_fronius)
+    urls_fronius_data_manager = openJson('./urlsFroniusDataManager.json')
+    print(urls_fronius_data_manager)
+    thread_fronius = threading.Thread(
+        target=setupThread,
+        args=(fronius.getData, urls_fronius)
+    )
     # executeThread()
     
-    # thread_froniusDataManager = threading.Thread(
-    #     target=setupThread,
-    #     args=(froniusDataManager.metodo_patch, urls_fronius_data_manager)
-    # )
+    thread_froniusDataManager = threading.Thread(
+        target=setupThread,
+        args=(froniusDataManager.metodo_patch, urls_fronius_data_manager)
+    )
 
-    # thread_enphaseManager = threading.Thread(
-    #     target=setupThreadEnphase,
-    #     args=(enphaseManager.getData,)
-    # )
+    thread_enphaseManager = threading.Thread(
+        target=setupThreadEnphase,
+        args=(enphaseManager.getData,)
+    )
 
 
-    #thread_fronius.start()
-    #thread_froniusDataManager.start()
-    #thread_enphaseManager.start()
+    thread_fronius.start()
+    thread_froniusDataManager.start()
+    thread_enphaseManager.start()
 
     # Mantén el programa principal en ejecución
-    #thread_fronius.join()
-    #thread_froniusDataManager.join()
-    #thread_enphaseManager.join()
+    thread_fronius.join()
+    thread_froniusDataManager.join()
+    thread_enphaseManager.join()
 
 
