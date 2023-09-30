@@ -1,4 +1,6 @@
 import time
+import requests
+import json
 
 def getData(urls):
     print(urls)
@@ -16,10 +18,26 @@ def getData(urls):
         
 #print(metodoGet("http://10.60.32.30/solar_api/v1/GetSensorRealtimeData.cgi?DataCollection=NowSensorData&Scope=System"))
 
+def metodo_patch(server_ip, datos, device_id):
+    try:
+        cabeceras = {
+            "Content-Type": "application/json"
+        }
+        url = f"http://{server_ip}:1026/v2/entities/{device_id}/attrs"
+        
+        respuesta = requests.patch(url, data=json.dumps(datos), headers=cabeceras)
+        
+
+        if respuesta.status_code == 204:
+            return "Solicitud PATCH exitosa."
+        else:
+            return f"Error en la solicitud PATCH. Código de estado: {respuesta.status_code}"
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+
 
 def extraerDatosFroniusDataManager(json_froniusDM):#json_froniusDM es el json obtenido de aplicar la función metodoGet con la url del fronius data manager como parámetro
-    import requests
-    import json
     from datetime import datetime, timedelta
 
     
