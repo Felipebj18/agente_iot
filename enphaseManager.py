@@ -143,15 +143,34 @@ def createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData):
         }
     }
 
-    # Agregar las potencias individuales al JSON
-    for key, value in microInvertersData.items():
+    # # Agregar las potencias individuales al JSON
+    # for key, value in microInvertersData.items():
+    #     json_data[key] = {
+    #         "type": "Number",
+    #         "value": value
+    #     }
+    # Mapear los números de serie a las llaves P_I1, P_I2, ..., P_I20
+    num_series = list(microInvertersData.keys())[:20]  # Tomar los primeros 20 números de serie
+    for i, numSerie in enumerate(num_series, 1):
+        key = "P_I{}".format(i)
+        value = microInvertersData.get(numSerie, 0.0)  # Obtener el valor de la potencia o 0.0 si no está presente
         json_data[key] = {
             "type": "Number",
             "value": value,
             "metadata": {
-                "numSerie": key
+                "numSerie": numSerie  # Agregar el número de serie original como metadata
             }
         }
+    # for i in range(1, 21):
+    #     key = "P_I{}".format(i)
+    #     value = microInvertersData.get(key, 0.0)  # Obtener el valor de la potencia o 0.0 si no está presente
+    #     json_data[key] = {
+    #         "type": "Number",
+    #         "value": value,
+    #         "metadata": {
+    #             "numSerie": key  # Aquí se agrega el número de serie como metadata
+    #         }
+    #     }
 
     # Convertir el diccionario en formato JSON
     json_str = json.dumps(json_data, indent=4)
