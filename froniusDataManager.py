@@ -14,8 +14,11 @@ def getData(urls):
             extraerDatosFroniusDataManager(data)
             # print("Los datos de la URL ", nombre_url, "son:")
             print()
+            # return
         else:
             print("Error en la solicitud. Código de error:", response.status_code)
+            # return
+    return
         
 #print(metodoGet("http://10.60.32.30/solar_api/v1/GetSensorRealtimeData.cgi?DataCollection=NowSensorData&Scope=System"))
 
@@ -101,6 +104,6 @@ def extraerDatosFroniusDataManager(json_froniusDM):#json_froniusDM es el json ob
         # 'Timestamp' : fecha
     }
     # print("FRONIUS DATA MANAGER")
-    print(data_final)
+    # print(data_final)
     metodo_patch(data_final)
     return data_final

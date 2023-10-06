@@ -122,6 +122,7 @@ def getData():
     createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData)
 
     driver.quit()
+    return
 
 
 def createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData):
@@ -163,10 +164,11 @@ def createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData):
     # Imprimir el JSON
     # print(json_str)
     actualizarEntidad(json_str)
+    return
 
 
 def actualizarEntidad(json_data):
-    print(json_data)
+    # print(json_data)
     try:
         url = 'http://54.145.74.186:1026/v2/entities/EnphaseDM_1/attrs'
         # print(url)
@@ -184,6 +186,7 @@ def actualizarEntidad(json_data):
         # Imprimir la respuesta completa
         # print("Enphase Manager")
         # print(f"Respuesta: {response.text}")
+        return
         
     except requests.exceptions.RequestException as e:
         print(f"Error al realizar la solicitud HTTP: {e}")

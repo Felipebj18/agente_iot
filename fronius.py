@@ -10,9 +10,11 @@ def getData(urls):
         if response.status_code == 200:#si la petición es exitosa
             data = response.json()
             extrerDatosFronisDevices(data, url)
+            # return
         else:
             print("Error en la solicitud. Código de error:", response.status_code)
-        
+            # return
+    return
 
 
 def extrerDatosFronisDevices(json_froniusDevice, url):
@@ -40,6 +42,7 @@ def extrerDatosFronisDevices(json_froniusDevice, url):
         return
     except Exception as e:
         print(f"Se produjo una excepción en la variable '{e.args[0]}' y el DeviceId es '{device_info['DeviceId']}'")
+        return
 
 
 def crearPostJSON(data_final, url):
@@ -107,9 +110,11 @@ def actualizarEntidad(url, json_data):
         # Imprimir la respuesta completa
         # print("Fronius Device:")
         # print(f"Respuesta: {response.text}")
+        return
         
     except requests.exceptions.RequestException as e:
         print(f"Error al realizar la solicitud HTTP: {e}")
+        return
 
 
 
