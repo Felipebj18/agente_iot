@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import datetime
+import json
+import requests
 
 microInvertersData = {}
 
@@ -54,13 +56,13 @@ def getData():
     time.sleep(2)
     totalEnergyElement = driver.find_element_by_xpath('//*[@id="energy_lifetime"]/div[2]/div/div/span[1]')
     units = totalEnergyElement.get_attribute('data-units')
-    energyValue = totalEnergyElement.get_attribute('data-value')
+    EnergyTotal = totalEnergyElement.get_attribute('data-value')
 
 
 
     # Buscar el elemento de energía de hoy
     energyTodayElement = driver.find_element_by_xpath('//*[@id="energy_today"]/div[2]/div[1]/div/span[1]')
-    energyTodayValue = energyTodayElement.get_attribute('data-value') #Energyy day
+    EnergyDay = energyTodayElement.get_attribute('data-value') #Energyy day
     energyTodayUnit = energyTodayElement.get_attribute('data-units')
 
 
@@ -79,7 +81,7 @@ def getData():
     time.sleep(2)
 
     # Inicializar una variable para el total de potencia
-    totalPower = 0 #PAC
+    PAC = 0 #PAC
 
     # Iterar a través de las filas de la tabla (20 filas en total)
     for i in range(1, 21):
@@ -99,7 +101,7 @@ def getData():
             microInvertersData[numSerie] = potenciaGenerada
 
             # Agregar la potencia generada a la variable totalPower
-            totalPower += potenciaGenerada
+            PAC += potenciaGenerada
 
 
     formato = '%d-%m-%Y %H:%M:%S'
@@ -110,13 +112,77 @@ def getData():
     for numSerie, potenciaGenerada in microInvertersData.items():
         print(f"NumSerie: {numSerie}, PotenciaGenerada: {potenciaGenerada}")
 
-    # Imprimir datos obtenidos
-    print("total energy value:")
-    print(energyValue, " ", units)
-    print("Energy today:")
-    print(energyTodayValue, " ", energyTodayUnit)
-    print("Total Power:", totalPower)
-    print("Hora actual: ", fecha_actual)
+    # # Imprimir datos obtenidos
+    # print("total energy value:")
+    # print(EnergyTotal, " ", units)
+    # print("Energy today:")
+    # print(EnergyDay, " ", energyTodayUnit)
+    # print("Total Power / PAC:", PAC)
+    # print("Hora actual: ", fecha_actual)
+    createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData)
 
     driver.quit()
+
+
+def createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData):
+    # Crear un diccionario para el JSON
+    json_data = {
+        "EnergyDay": {
+            "type": "Number",
+            "value": EnergyDay,
+            "metadata": {}
+        },
+        "EnergyTotal": {
+            "type": "Number",
+            "value": EnergyTotal,
+            "metadata": {}
+        },
+        "PAC": {
+            "type": "Number",
+            "value": PAC,
+            "metadata": {}
+        }
+    }
+
+    # Mapear los números de serie a las llaves P_I1, P_I2, ..., P_I20
+    num_series = list(microInvertersData.keys())[:20]  # Tomar los primeros 20 números de serie
+    for i, numSerie in enumerate(num_series, 1):
+        key = "P_I{}".format(i)
+        value = microInvertersData.get(numSerie, 0.0)  # Obtener el valor de la potencia o 0.0 si no está presente
+        json_data[key] = {
+            "type": "Number",
+            "value": value,
+            "metadata": {
+                # "numSerie": numSerie  # Agregar el número de serie original como metadata
+            }
+        }
+
+    # Convertir el diccionario en formato JSON
+    json_str = json.dumps(json_data, indent=4)
+
+    # Imprimir el JSON
+    # print(json_str)
+    actualizarEntidad(json_str)
+
+
+def actualizarEntidad(json_data):
+    print(json_data)
+    try:
+        url = 'http://54.145.74.186:1026/v2/entities/EnphaseDM_1/attrs'
+        print(url)
+        # Convertir el diccionario en una cadena JSON con comillas dobles
+        # json_str = json.dumps(json_data).replace("'", "\"")
+        # print(json_str)
+        
+        # Realizar la petición HTTP PATCH con el JSON en el cuerpo del mensaje
+        response = requests.patch(url, data=json_data, headers={'Content-Type': 'application/json'})
+        
+        # Imprimir el código de respuesta
+        print(f"Código de respuesta: {response.status_code}")
+        
+        # Imprimir la respuesta completa
+        print(f"Respuesta: {response.text}")
+        
+    except requests.exceptions.RequestException as e:
+        print(f"Error al realizar la solicitud HTTP: {e}")
 
