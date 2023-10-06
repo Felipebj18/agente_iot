@@ -18,7 +18,7 @@ def scroll_to_element(driver, element):
         actions.perform()
     except Exception as e:
         # print("Error al desplazar hasta el elemento:", e)
-        print(" ")
+        print()
 
 # Opciones para ejecutar Firefox en modo headless
 firefox_options = webdriver.FirefoxOptions()
@@ -108,9 +108,9 @@ def getData():
     fecha_actual = datetime.datetime.now().strftime(formato)
 
     # Imprimir el diccionario
-    print("Diccionario de Microinversores:")
-    for numSerie, potenciaGenerada in microInvertersData.items():
-        print(f"NumSerie: {numSerie}, PotenciaGenerada: {potenciaGenerada}")
+    # print("Diccionario de Microinversores:")
+    # for numSerie, potenciaGenerada in microInvertersData.items():
+    #     print(f"NumSerie: {numSerie}, PotenciaGenerada: {potenciaGenerada}")
 
     # # Imprimir datos obtenidos
     # print("total energy value:")
@@ -169,7 +169,7 @@ def actualizarEntidad(json_data):
     print(json_data)
     try:
         url = 'http://54.145.74.186:1026/v2/entities/EnphaseDM_1/attrs'
-        print(url)
+        # print(url)
         # Convertir el diccionario en una cadena JSON con comillas dobles
         # json_str = json.dumps(json_data).replace("'", "\"")
         # print(json_str)
@@ -178,10 +178,12 @@ def actualizarEntidad(json_data):
         response = requests.patch(url, data=json_data, headers={'Content-Type': 'application/json'})
         
         # Imprimir el código de respuesta
+        print("Enphase Manager:")
         print(f"Código de respuesta: {response.status_code}")
         
         # Imprimir la respuesta completa
-        print(f"Respuesta: {response.text}")
+        # print("Enphase Manager")
+        # print(f"Respuesta: {response.text}")
         
     except requests.exceptions.RequestException as e:
         print(f"Error al realizar la solicitud HTTP: {e}")

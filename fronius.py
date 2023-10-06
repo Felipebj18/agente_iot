@@ -2,7 +2,7 @@ import requests
 import json
 
 def getData(urls):
-    print(urls)
+    # print(urls)
     import requests
     for nombre_url,url in urls.items():
         response = requests.get(url)
@@ -92,18 +92,20 @@ def transform_url(url, deviceId):
 
 def actualizarEntidad(url, json_data):
     try:
-        print(url)
+        # print(url)
         # Convertir el diccionario en una cadena JSON con comillas dobles
         json_str = json.dumps(json_data).replace("'", "\"")
-        print(json_str)
+        # print(json_str)
         
         # Realizar la petición HTTP PATCH con el JSON en el cuerpo del mensaje
         response = requests.patch(url, data=json_str, headers={'Content-Type': 'application/json'})
         
         # Imprimir el código de respuesta
-        # print(f"Código de respuesta: {response.status_code}")
+        print("Fronius Device")
+        print(f"Código de respuesta: {response.status_code}")
         
         # Imprimir la respuesta completa
+        # print("Fronius Device:")
         # print(f"Respuesta: {response.text}")
         
     except requests.exceptions.RequestException as e:
