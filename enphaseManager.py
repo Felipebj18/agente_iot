@@ -169,6 +169,7 @@ def createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData):
 
 def actualizarEntidad(json_data):
     # print(json_data)
+    print("Ingresa al patch de Enphase")
     try:
         url = 'http://54.145.74.186:1026/v2/entities/EnphaseDM_1/attrs'
         # print(url)
