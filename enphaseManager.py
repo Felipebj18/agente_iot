@@ -171,7 +171,7 @@ def actualizarEntidad(json_data):
     # print(json_data)
     print("Ingresa al patch de Enphase")
     try:
-        url = 'http://54.145.74.186:1026/v2/entities/EnphaseDM_1/attrs'
+        url = 'http://54.145.74.186:1026/v2/entities/Enphase_1/attrs'
         # print(url)
         # Convertir el diccionario en una cadena JSON con comillas dobles
         # json_str = json.dumps(json_data).replace("'", "\"")

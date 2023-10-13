@@ -94,6 +94,8 @@ def transform_url(url, deviceId):
 
 
 def actualizarEntidad(url, json_data):
+    print(url)
+    print(json_data)
     try:
         # print(url)
         # Convertir el diccionario en una cadena JSON con comillas dobles
@@ -108,8 +110,8 @@ def actualizarEntidad(url, json_data):
         print(f"Código de respuesta: {response.status_code}")
         
         # Imprimir la respuesta completa
-        # print("Fronius Device:")
-        # print(f"Respuesta: {response.text}")
+        print("Fronius Device:")
+        print(f"Respuesta: {response.text}")
         return
         
     except requests.exceptions.RequestException as e:
