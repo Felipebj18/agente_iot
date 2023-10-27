@@ -2,6 +2,8 @@ import time
 import requests
 import json
 
+from get_json import get_json_from_url
+
 def getData(urls):
     # print(urls)
     import requests
