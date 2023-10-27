@@ -1,5 +1,6 @@
 import requests
 import json
+from get_json import get_json_from_url
 
 def getData(urls):
     # print(urls)
@@ -118,6 +119,23 @@ def actualizarEntidad(url, json_data):
         print(f"Error al realizar la solicitud HTTP: {e}")
         return
 
+def load_data(urls):
+    final_dict={}
+    for url_id in urls:
+        url=urls[url_id]["url"]
+        aux_data = get_json_from_url(url)
+        result_dict = {}
+        for key, value in aux_data.items():
+            if isinstance(value, dict) and 'value' in value:
+                # Si el valor es un diccionario con una clave "value", asigna ese valor
+                result_dict[key] = value['value']
+            else:
+                result_dict[key] = value
+        id=result_dict["id"]
+        if 'id' in result_dict:
+            result_dict.pop('id')
+        final_dict[id]=result_dict
+    return final_dict
 
 
 

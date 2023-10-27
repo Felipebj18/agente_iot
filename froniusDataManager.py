@@ -19,7 +19,7 @@ def getData(urls):
             print("Error en la solicitud. Código de error:", response.status_code)
             # return
     return
-        
+
 #print(metodoGet("http://10.60.32.30/solar_api/v1/GetSensorRealtimeData.cgi?DataCollection=NowSensorData&Scope=System"))
 
 def metodo_patch(datos):
@@ -107,3 +107,16 @@ def extraerDatosFroniusDataManager(json_froniusDM):#json_froniusDM es el json ob
     # print(data_final)
     metodo_patch(data_final)
     return data_final
+
+def load_data(urls):
+    for url_id in urls:
+        url=urls[url_id]["url"]
+        aux_data = get_json_from_url(url)
+        
+        id=aux_data["id"]
+        radiation_fronius=aux_data["Radiacion"]["value"]
+        temp1_fronius = aux_data["Temperatura_1"]["value"]
+        temp2_fronius = aux_data["Temperatura_2"]["value"]
+        result_dict = {"Radicion":radiation_fronius,"Temperatura_1":temp1_fronius,"Temperatura_2":temp2_fronius}
+        final_dict = {id:result_dict}
+        return final_dict
