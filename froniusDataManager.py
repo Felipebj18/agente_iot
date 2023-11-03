@@ -1,6 +1,8 @@
 import time
 import requests
 import json
+from dwInsertions import dw_insertions
+from getJson import load_data
 
 def getData(urls):
     # print(urls)
@@ -25,6 +27,20 @@ def getData(urls):
 def metodo_patch(datos):
     server_ip = "54.145.74.186"
     device_id = "FroniusDM_1"
+
+    db_params = {
+    "host": "54.145.74.186",
+    "port": 5555,
+    "database": "postgres",
+    "user": "postgres",
+    "password": "post123"
+    }
+
+
+    dw = dw_insertions(db_params)
+
+    froniusDM_data = load_data("./urlOCBFroniusDataManager.json")
+
     try:
         cabeceras = {
             "Content-Type": "application/json"
@@ -32,6 +48,7 @@ def metodo_patch(datos):
         url = f"http://{server_ip}:1026/v2/entities/{device_id}/attrs"
         
         respuesta = requests.patch(url, data=json.dumps(datos), headers=cabeceras)
+        dw.insert_froniusdm(froniusDM_data)
         
         # print("Fronius Data Manager:")
         # print(f"Respuesta: {respuesta.text}")
