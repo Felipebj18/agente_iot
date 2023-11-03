@@ -7,6 +7,8 @@ import time
 import datetime
 import json
 import requests
+from dwInsertions import dw_insertions
+from getJson import load_data
 
 microInvertersData = {}
 
@@ -169,7 +171,23 @@ def createPostJSON(EnergyDay, EnergyTotal, PAC, microInvertersData):
 
 def actualizarEntidad(json_data):
     # print(json_data)
-    print("Ingresa al patch de Enphase")
+    # print("Ingresa al patch de Enphase")
+
+    db_params = {
+    "host": "54.145.74.186",
+    "port": 5555,
+    "database": "postgres",
+    "user": "postgres",
+    "password": "post123"
+    }
+
+
+    dw = dw_insertions(db_params)
+
+    enphaseData = load_data("./urlOCBEnphase.json")
+
+    print(enphaseData)
+
     try:
         url = 'http://54.145.74.186:1026/v2/entities/Enphase_1/attrs'
         # print(url)
@@ -180,6 +198,8 @@ def actualizarEntidad(json_data):
         # Realizar la petición HTTP PATCH con el JSON en el cuerpo del mensaje
         response = requests.patch(url, data=json_data, headers={'Content-Type': 'application/json'})
         
+        dw.insert_enphase(enphaseData)
+
         # Imprimir el código de respuesta
         print("Enphase Manager:")
         print(f"Código de respuesta: {response.status_code}")
