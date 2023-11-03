@@ -3,6 +3,7 @@ import threading
 import fronius
 import froniusDataManager
 import enphaseManager
+import InsertFacts
 
 import json
 
@@ -50,6 +51,11 @@ def setupThreadEnphase(getDataFunction):
         getDataFunction()
         time.sleep(intervalo_consulta) #Se debe actualizar a 5 min
 
+def setupThreadInsertFacts():
+    while True:
+        InsertFacts.insertIntoDwh()
+        time.sleep(intervalo_consulta)
+
         
 if __name__ == "__main__":
     '''
@@ -76,14 +82,23 @@ if __name__ == "__main__":
         args=(enphaseManager.getData,)
     )
 
+    # ####################################
+    thread_insert_dwh = threading.Thread(
+        target=setupThreadInsertFacts
+    )
 
-    # thread_fronius.start()
-    # thread_froniusDataManager.start()
+    # ####################################
+
+
+    thread_fronius.start()
+    thread_froniusDataManager.start()
     thread_enphaseManager.start()
+    thread_insert_dwh.start()
 
     # Mantén el programa principal en ejecución
-    # thread_fronius.join()
-    # thread_froniusDataManager.join()
+    thread_fronius.join()
+    thread_froniusDataManager.join()
     thread_enphaseManager.join()
+    thread_insert_dwh.join()
 
 
