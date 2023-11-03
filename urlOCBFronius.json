@@ -1,0 +1,8 @@
+{
+    "url1":{"url":"http://54.145.74.186:1026/v2/entities/FroniusB11_1","devicename":"FroniusB11_1"},
+    "url2":{"url":"http://54.145.74.186:1026/v2/entities/FroniusB11_2","devicename":"FroniusB11_2" },
+    "url3":{"url":"http://54.145.74.186:1026/v2/entities/FroniusB18_1","devicename":"FroniusB18_1"},
+    "url4":{"url":"http://54.145.74.186:1026/v2/entities/FroniusB18_2","devicename":"FroniusB18_2"},
+    "ulr5":{"url":"http://54.145.74.186:1026/v2/entities/FroniusB18_3","devicename":"FroniusB18_3"},
+    "url6":{"url":"http://54.145.74.186:1026/v2/entities/FroniusB18_4","devicename":"FroniusB18_4"}
+}
