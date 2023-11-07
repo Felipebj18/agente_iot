@@ -25,14 +25,11 @@ class dw_insertions:
             try:
                 cursor = self.conn.cursor()
 
-                for device_id, device_data in data.items():
-                    # Insertar los datos en DIM_FroniusDevice
-                    
+                for device_id, device_data in data.items():                  
                     insert_query = """
                         INSERT INTO DIM_FroniusDevice (FD_EnergyDay, FD_ENERGYYEAR, FD_UAC, FD_UDC, FD_IAC, FD_IDC, FD_PAC, FD_NominalPower, FD_TimeStamp, FD_DeviceName)
                         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """
-                    
+                    """                    
                     cursor.execute(
                         insert_query,
                         (
@@ -50,9 +47,8 @@ class dw_insertions:
                     )
 
                 self.conn.commit()
-                # print("Datos enviados a DIM fronius")
-
                 self.close_connection(self)
+
             except Exception as e:
                 print(f"Error al insertar los datos en DIM_FroniusDevice: {e}")
 
