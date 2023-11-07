@@ -69,8 +69,7 @@ def crearPostJSON(data_final, url):
         actualizarEntidad(postUrl, post_json)
         return
     except Exception as e:
-        print(e)
-        print("Error en create POST")
+        print("Error creando el JSON del post a OCB: ", e)
 
 
 def transform_url(url, deviceId):
@@ -90,8 +89,7 @@ def transform_url(url, deviceId):
         
         return new_url
     except Exception as e:
-        print(e)
-        print("Error en transform URL")
+        print("Error en transform al transformar la URL: ", e)
 
 
 
@@ -108,7 +106,6 @@ def actualizarEntidad(url, json_data):
     dw = dw_insertions(db_params)
 
     fronius_data = load_data("./urlOCBFronius.json")
-    print(fronius_data)
 
     try:
         json_str = json.dumps(json_data).replace("'", "\"")

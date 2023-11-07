@@ -19,7 +19,6 @@ class dw_insertions:
             return None
 
     def insert_fronius(self, data):
-        print("Ingresa al método insert_fronius DW")
 
         if self.conn:
             try:

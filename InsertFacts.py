@@ -83,7 +83,6 @@ def calculateEInd(record):
     return indicators
 
 def insertIntoDwh():
-    print("INGRESA AL MÉTODO INSERT INTO DW")
     indicators = []
     fd_indicators = []
     e_indicators = []
@@ -203,7 +202,6 @@ def insertIntoDwh():
 
         conn.close()
         
-        print("Insersión a la DB realizada")
 
     except Exception as e:
         print(f"Error al insertar los datos en la DB: {e}")

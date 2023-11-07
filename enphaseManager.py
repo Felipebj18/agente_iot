@@ -154,8 +154,6 @@ def actualizarEntidad(json_data):
 
     enphaseData = load_data("./urlOCBEnphase.json")
 
-    print(enphaseData)
-
     try:
         url = 'http://54.145.74.186:1026/v2/entities/Enphase_1/attrs'
         
