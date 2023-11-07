@@ -54,7 +54,6 @@ def get_last_dim_froniusdevice_records(conn, limit=6):
     
 
 def calculateFdInd(records):
-    # print(records[1])
     indicators = []
 
     ind_fd_fc = records[1] / (records[8] * 24)
@@ -83,16 +82,6 @@ def calculateEInd(record):
 
     return indicators
 
-'''
-db_params, id_fd1, id_fd2, id_fd3, id_fd4, id_fd5, id_fd6, id_e,
-                  ind_fd1_fc, ind_fd2_fc, ind_fd3_fc, ind_fd4_fc, ind_fd5_fc, ind_fd6_fc,
-                  ind_fd1_hsp, ind_fd2_hsp, ind_fd3_hsp, ind_fd4_hsp, ind_fd5_hsp, ind_fd6_hsp,
-                  ind_fd1_uacvsudc, ind_fd2_uacvsudc, ind_fd3_uacvsudc, ind_fd4_uacvsudc, ind_fd5_uacvsudc, ind_fd6_uacvsudc,
-                  ind_fd1_iacvsidc, ind_fd2_iacvsidc, ind_fd3_iacvsidc, ind_fd4_iacvsidc, ind_fd5_iacvsidc, ind_fd6_iacvsidc,
-                  ind_e_hsp, ind_e_fc, ind_e_meanp,
-                  facts_timestamp, e_devicename, fd1_devicename, fd2_devicename, fd3_devicename, fd4_devicename, 
-                  fd5_devicename, fd6_devicename'''
-
 def insertIntoDwh():
     print("INGRESA AL MÉTODO INSERT INTO DW")
     indicators = []
@@ -111,28 +100,14 @@ def insertIntoDwh():
 
     if conn:
         last_dim_enphase_record = get_last_dim_enphase_record(conn)
-        # last_dim_froniusdatamanager_record = get_last_dim_froniusdatamanager_record(conn)
         last_dim_froniusdevice_records = get_last_dim_froniusdevice_records(conn, limit=6)
 
         if last_dim_enphase_record:
-        #    print("Último registro de dim_enphase:", last_dim_enphase_record)
            e_indicators = calculateEInd(last_dim_enphase_record)
-        #    print("Enphase records")
-        #    print(last_dim_enphase_record)
-        #    print("Indicadores Enphase")
-        #    print(e_indicators)
-        
-        # if last_dim_froniusdatamanager_record:
-        #    print("Último registro de dim_froniusdatamanager:", last_dim_froniusdatamanager_record)
 
         if last_dim_froniusdevice_records:
-            # print("FD data:")
-            # print()
-            # print("Últimos registros de dim_froniusdevice:")
             for record in last_dim_froniusdevice_records:
                 fd_indicators.append(calculateFdInd(record))
-            # print("Indicadores FD")
-            # print(fd_indicators)
 
         conn.close()
 
@@ -147,9 +122,6 @@ def insertIntoDwh():
 
     #ID E
     id_e = last_dim_enphase_record[0]
-
-    #ID FDM
-    # id_fdm = last_dim_froniusdatamanager_record[0]
 
     #Indicadores FD
     ind_fd1_fc = fd_indicators[0][0]
