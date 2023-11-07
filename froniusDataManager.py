@@ -5,7 +5,7 @@ from dwInsertions import dw_insertions
 from getJson import load_data
 
 def getData(urls):
-    # print(urls)
+    # prin
     import requests
     for nombre_url,url in urls.items():
         response = requests.get(url)

@@ -14,13 +14,6 @@ def get_json_from_url(url):
         print(f"An error occurred: {str(e)}")
         return None
 
-# def openJson(fileName):
-#     with open(fileName, 'r') as archivo_json:
-#         datos = json.load(archivo_json)
-
-#     return datos
-
-
 def load_data(urls):
     
     with open(urls, 'r') as archivo_json:
@@ -32,7 +25,6 @@ def load_data(urls):
         result_dict = {}
         for key, value in aux_data.items():
             if isinstance(value, dict) and 'value' in value:
-                # Si el valor es un diccionario con una clave "value", asigna ese valor
                 result_dict[key] = value['value']
             else:
                 result_dict[key] = value
