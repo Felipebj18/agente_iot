@@ -2,7 +2,6 @@ import requests
 import json
 from dwInsertions import dw_insertions
 from getJson import load_data
-import test
 
 def getData(urls):
     import requests
@@ -117,7 +116,7 @@ def actualizarEntidad(url, json_data):
         response = requests.patch(url, data=json_str, headers={'Content-Type': 'application/json'})
         
         dw.insert_fronius(fronius_data)
-        
+
         return
         
     except requests.exceptions.RequestException as e:
