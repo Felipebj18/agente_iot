@@ -2,4 +2,4 @@
 __pycache__
 
 # Ignorar el archivo geckodriver.log
-geckodriver.log
+#geckodriver.log
