@@ -1,0 +1,7 @@
+json
+threading
+time
+psycopg2
+pytz
+requests
+selenium==3.141.0
