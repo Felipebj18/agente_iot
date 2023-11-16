@@ -39,11 +39,5 @@ La aplicación hace uso de múltiples hilos para cada una de las funciones menci
    
 2. **Nuevas Fuentes de Datos:** Agregar nuevas fuentes de datos es posible, pero deben ser del mismo tipo que las fuentes utilizadas previamente. La limpieza de datos requiere la conversión de un modelo particular de datos, y la lectura de datos del Enphase Manager se realiza mediante web scraping, lo que implica programar el proceso desde cero para cada nueva fuente.
 
-## Instrucciones para Crear Entidades de Contexto para OCB
 
-(se explica aquí cómo crear entidades de contexto para OCB, pero este detalle depende de la implementación específica y debería proporcionarse en una sección separada o en documentación adicional)
-
----
-
-Este README proporciona una visión general del proyecto "Agente IoT". Para obtener detalles específicos sobre la implementación y configuración, consulte la documentación adicional en la carpeta `docs/`.
 
