@@ -38,3 +38,7 @@ La aplicación hace uso de múltiples hilos para cada una de las funciones menci
 1. **Intranet de la UPB:** La aplicación funciona únicamente dentro de la intranet de la UPB debido a políticas de seguridad frente a las fuentes de datos.
    
 2. **Nuevas Fuentes de Datos:** Agregar nuevas fuentes de datos es posible, pero deben ser del mismo tipo que las fuentes utilizadas previamente. La limpieza de datos requiere la conversión de un modelo particular de datos, y la lectura de datos del Enphase Manager se realiza mediante web scraping, lo que implica programar el proceso desde cero para cada nueva fuente.
+
+
+
+Información adicional sobre como cambiar las configuraciones del sistema y documentación del código puede encontrarla en nuestra [wiki](https://github.com/Felipebj18/agente_iot/wiki).
